@@ -18,16 +18,16 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category saveOrUpdate(Category category) {
-        return null;
+        return categoryRepository.save(category);
     }
 
     @Override
     public Category findById(Long id) {
-        return null;
+        return categoryRepository.findById(id).orElse(null);
     }
 
     @Override
     public void delete(Long id) {
-
+        categoryRepository.deleteById(id);
     }
 }
